@@ -1,43 +1,24 @@
-var CartAddButton = require('./CartAddButton');
-
-var CartItemList = React.createClass({
+var CartAddButton = React.createClass({
     render: function() {
-
-        var itemAmt = this.props.itemAmt.map(function(item, i) {
-            return <input type='number' className='itemAmt' defaultValue={item} key={i} />
-        });
-
-        var itemName = this.props.itemName.map(function(name, i) {
-            return <span className='itemName' key={i}>{name}</span>
-        });
-
-        var itemPrice = this.props.itemPrice.map(function(price, i) {
-           return <span className='itemPrice' key={i}>{price}</span>
-        })
-
-        return (
-            <li className='row list-inline items-row'>
-                <form>
-                    {itemAmt}
-                    {itemName}
-                    {itemPrice}
-
-                    <CartAddButton />
-                </form>
-            </li>
-        )
+        return <button className='btn btn-primary btn-sm btn-cart'>Add</button>
     }
 });
 
-var CartItem = React.createClass({
-    getInitialState: function() {
-        return {
-            cartItemAmt: [9, 5],
-            cartItemName: ['Food', 'Treats'],
-            cartItemPrice: ['9.99', '5.99']
-        }
-    },
+var CartItemList = React.createClass({
     render: function() {
+        var items = this.props.items.map(function(item, i) {
+           return (
+               <li className='row list-inline items-row' key={i}>
+                   <form>
+                       <input type='number' className='itemAmt' defaultValue={item.amt} />
+                       <span className='itemName'>{item.name}</span>
+                       <CartAddButton />
+                       <span className='itemPrice'>{item.price}</span>
+                   </form>
+               </li>
+           )
+        });
+
         return (
             <ul>
                 <li className="row list-inline item-title">
@@ -46,22 +27,33 @@ var CartItem = React.createClass({
                     <span>Price</span>
                 </li>
 
-                <CartItemList
-                    itemAmt={this.state.cartItemAmt}
-                    itemName={this.state.cartItemName}
-                    itemPrice={this.state.cartItemPrice}
-                />
+                {items}
             </ul>
-        );
+        )
     }
-
 });
 
 var CartContainer = React.createClass({
+    getInitialState: function() {
+        return {
+            items: [
+                {
+                    amt: 9,
+                    name: 'Food',
+                    price: '9.99'
+                },
+                {
+                    amt: 5,
+                    name: 'Treats',
+                    price: '5.99'
+                }
+            ]
+        }
+    },
     render: function() {
        return(
            <div className='col-sm-12 text-left'>
-               <CartItem />
+               <CartItemList items={this.state.items} />
            </div>
        );
    }
@@ -71,4 +63,3 @@ React.render(
     <CartContainer />,
     document.getElementById('CartItems')
 );
-
