@@ -1,0 +1,20 @@
+{
+  "name": "ShoppingCart",
+  "version": "0.0.0",
+  "description": "ShoppingCart",
+  "main": "server.js",
+  "author": {
+    "name": "Martin",
+    "email": ""
+  },
+  "dependencies": {
+    "forever": "^0.14.1",
+    "good": "^6.1.0",
+    "good-console": "^5.0.0",
+    "hapi": "^8.4.0",
+    "joi": "^6.2.0",
+    "mysql": "^2.6.2",
+    "sequelize": "^2.0.6",
+    "sequelize-cli": "^1.7.0"
+  }
+}

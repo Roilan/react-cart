@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "cartman",
+    "password": "shop1234",
+    "database": "ShoppingCart",
+    "host": "192.168.1.220",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "root",
+    "password": null,
+    "database": "database_production",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}
