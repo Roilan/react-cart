@@ -1,0 +1,11 @@
+{
+  "name": "react-sample",
+  "version": "0.0.1",
+  "devDependencies": {
+    "browser-sync": "^2.6.4",
+    "gulp": "^3.8.11",
+    "gulp-react": "^3.0.1",
+    "gulp-sass": "^1.3.3",
+    "react": "^0.13.2"
+  }
+}
