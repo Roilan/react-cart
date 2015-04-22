@@ -1,6 +1,6 @@
-var CartContainer = require('./CartComponent/CartComponent.js');
+var StoreItems = require('./StoreComponent/ListStore.js');
 
 React.render(
-    <CartContainer />,
-    document.getElementById('CartItems')
+    <StoreItems />,
+    document.getElementById('StoreItems')
 );

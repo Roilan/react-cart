@@ -1,12 +1,7 @@
+var AddButton = require('./AddButton');
 var request = require('reqwest');
-//
-var CartAddButton = React.createClass({
-    render: function() {
-        return <button className='btn btn-primary btn-sm btn-cart'>Add</button>
-    }
-});
 
-var CartItemList = React.createClass({
+var ItemList = React.createClass({
     render: function() {
         var items = this.props.items.map(function(item, i) {
             return (
@@ -14,7 +9,7 @@ var CartItemList = React.createClass({
                     <form>
                         <input type='number' className='itemAmt' defaultValue={item.id} />
                         <span className='itemName'>{item.name}</span>
-                        <CartAddButton />
+                        <AddButton />
                         <span className='itemPrice'>{item.price}</span>
                     </form>
                 </li>
@@ -35,7 +30,7 @@ var CartItemList = React.createClass({
     }
 });
 
-var CartContainer = React.createClass({
+var StoreItems = React.createClass({
     getInitialState: function() {
         return {
             items: []
@@ -55,10 +50,10 @@ var CartContainer = React.createClass({
     render: function() {
         return(
             <div className='col-sm-12 text-left'>
-                <CartItemList items={this.state.items} />
+                <ItemList items={this.state.items} />
             </div>
         );
     }
 });
 
-module.exports = CartContainer;
+module.exports = StoreItems;
