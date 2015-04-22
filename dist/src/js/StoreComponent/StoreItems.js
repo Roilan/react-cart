@@ -1,6 +1,3 @@
-var AddButton = require('./AddButton');
-var request = require('reqwest');
-
 var ItemList = React.createClass({
     render: function() {
         var items = this.props.items.map(function(item, i) {
@@ -9,7 +6,7 @@ var ItemList = React.createClass({
                     <form>
                         <input type='number' className='itemAmt' defaultValue={item.id} />
                         <span className='itemName'>{item.name}</span>
-                        <AddButton />
+                        <button className='btn btn-primary btn-sm btn-cart'>Add</button>
                         <span className='itemPrice'>{item.price}</span>
                     </form>
                 </li>
@@ -31,32 +28,13 @@ var ItemList = React.createClass({
 });
 
 var StoreItems = React.createClass({
-    getInitialState: function() {
-        return {
-            items: []
-        }
-    },
-    componentDidMount: function() {
-        this.updateStoreItems();
-    },
     render: function() {
         return(
             <div className='col-sm-12 text-left'>
-                <ItemList items={this.state.items} />
+                <ItemList items={this.props.items} />
             </div>
         );
-    },
-    updateStoreItems: function() {
-        request({
-            url: 'http://104.236.200.153:3000/api/items',
-            method: 'GET',
-            success: function(response) {
-                this.setState({
-                    items: response
-                });
-            }.bind(this)
-        });
-    },
+    }
 });
 
 module.exports = StoreItems;

@@ -1,6 +1,12 @@
-var StoreItems = require('./StoreComponent/ListStore.js');
+var AddStoreItem = require('./StoreComponent/AddStoreItem');
+var StoreContainer = require('./StoreComponent/StoreContainer');
 
 React.render(
-    <StoreItems />,
+    <StoreContainer />,
     document.getElementById('StoreItems')
+);
+
+React.render(
+    <AddStoreItem />,
+    document.getElementById('AddStoreItem')
 );
