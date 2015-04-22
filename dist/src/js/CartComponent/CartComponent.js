@@ -1,3 +1,5 @@
+var request = require('reqwest');
+
 var CartAddButton = React.createClass({
     render: function() {
         return <button className='btn btn-primary btn-sm btn-cart'>Add</button>
@@ -10,7 +12,7 @@ var CartItemList = React.createClass({
             return (
                 <li className='row list-inline items-row' key={i}>
                     <form>
-                        <input type='number' className='itemAmt' defaultValue={item.amt} />
+                        <input type='number' className='itemAmt' defaultValue={item.id} />
                         <span className='itemName'>{item.name}</span>
                         <CartAddButton />
                         <span className='itemPrice'>{item.price}</span>
@@ -36,19 +38,19 @@ var CartItemList = React.createClass({
 var CartContainer = React.createClass({
     getInitialState: function() {
         return {
-            items: [
-                {
-                    amt: 9,
-                    name: 'Food',
-                    price: '9.99'
-                },
-                {
-                    amt: 5,
-                    name: 'Treats',
-                    price: '5.99'
-                }
-            ]
+            items: []
         }
+    },
+    componentDidMount: function() {
+        request({
+            url: 'http://104.236.200.153:3000/api/items',
+            method: 'GET',
+            success: function(response) {
+                this.setState({
+                    items: response
+                });
+            }.bind(this)
+        });
     },
     render: function() {
         return(
