@@ -37,6 +37,16 @@ var StoreItems = React.createClass({
         }
     },
     componentDidMount: function() {
+        this.updateStoreItems();
+    },
+    render: function() {
+        return(
+            <div className='col-sm-12 text-left'>
+                <ItemList items={this.state.items} />
+            </div>
+        );
+    },
+    updateStoreItems: function() {
         request({
             url: 'http://104.236.200.153:3000/api/items',
             method: 'GET',
@@ -47,13 +57,6 @@ var StoreItems = React.createClass({
             }.bind(this)
         });
     },
-    render: function() {
-        return(
-            <div className='col-sm-12 text-left'>
-                <ItemList items={this.state.items} />
-            </div>
-        );
-    }
 });
 
 module.exports = StoreItems;
