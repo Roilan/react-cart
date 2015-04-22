@@ -1,4 +1,4 @@
-var CartContainer = require('./CartComponent/index.js');
+var CartContainer = require('./CartComponent/CartComponent.js');
 
 React.render(
     <CartContainer />,
