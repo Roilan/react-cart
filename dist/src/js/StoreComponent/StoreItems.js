@@ -1,3 +1,5 @@
+var React = require('react');
+
 var ItemList = React.createClass({
     render: function() {
         var items = this.props.items.map(function(item, i) {

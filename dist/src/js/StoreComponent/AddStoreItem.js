@@ -1,3 +1,5 @@
+var React = require('react');
+
 var AddStoreItem = React.createClass({
     render: function() {
        return (

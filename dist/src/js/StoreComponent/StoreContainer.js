@@ -1,3 +1,4 @@
+var React = require('react');
 var request = require('reqwest');
 var StoreItems = require('./StoreItems');
 var AddStoreItem = require('./AddStoreItem');
