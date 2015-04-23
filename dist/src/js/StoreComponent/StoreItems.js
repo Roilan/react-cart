@@ -15,7 +15,10 @@ var ItemList = React.createClass({
 
         return (
             <ul>
-                <li className="row list-inline item-title">
+                <li className='row list-inline text-center'>
+                    <h2>The Store</h2>
+                </li>
+                <li className='row list-inline item-title'>
                     <span>Amt</span>
                     <span>Name</span>
                     <span>Price</span>
