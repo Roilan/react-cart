@@ -1,15 +1,16 @@
 'use strict';
+
 module.exports = function(sequelize, DataTypes) {
-  var Item = sequelize.define('Item', {
+  var Cart = sequelize.define('Cart', {
     name: DataTypes.STRING,
-    description: DataTypes.STRING,
     price: DataTypes.FLOAT,
-    amt: DataTypes.INTEGER
+    amt: DataTypes.INTEGER,
+    totalprice: DataTypes.FLOAT
   }, {
     classMethods: {
       associate: function(models) {
       }
     }
   });
-  return Item;
+  return Cart;
 };
