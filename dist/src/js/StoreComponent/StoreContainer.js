@@ -3,6 +3,8 @@ var request = require('reqwest');
 var StoreItems = require('./StoreItems');
 var AddStoreItem = require('./AddStoreItem');
 
+var api = 'http://104.236.200.153:3000/';
+
 var StoreContainer = React.createClass({
     getInitialState: function() {
         return {
@@ -20,7 +22,7 @@ var StoreContainer = React.createClass({
 
         if(this.state.itemDescription && this.state.itemName && this.state.itemPrice !== '') {
             request({
-                url: 'http://104.236.200.153:3000/api/items',
+                url: api + 'api/items',
                 method: 'POST',
                 data: {
                     price: this.state.itemPrice,
@@ -45,7 +47,7 @@ var StoreContainer = React.createClass({
     },
     updateStoreItems: function() {
         request({
-            url: 'http://104.236.200.153:3000/api/items',
+            url: api + 'api/items',
             method: 'GET',
             success: function(response) {
                 this.setState({
