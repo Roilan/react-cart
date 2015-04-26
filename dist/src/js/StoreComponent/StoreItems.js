@@ -6,7 +6,7 @@ var ItemList = React.createClass({
             return (
                 <li className='row list-inline items-row' key={i}>
                     <form>
-                        <input type='number' className='itemAmt' defaultValue={item.id} />
+                        <input type='number' className='itemAmt' defaultValue={item.amt} />
                         <span className='itemName'>{item.name}</span>
                         <button className='btn btn-primary btn-sm btn-cart'>Add</button>
                         <span className='itemPrice'>{item.price}</span>

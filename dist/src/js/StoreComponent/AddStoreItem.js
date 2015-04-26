@@ -20,10 +20,10 @@ var AddStoreItem = React.createClass({
                                onChange={this.props.updateItemState('itemPrice')}
                            />
 
-                           <label htmlFor='itemDescription'>Description:</label>
-                           <input type='text' id='itemDescription'
-                               defaultValue={this.props.itemDescription}
-                               onChange={this.props.updateItemState('itemDescription')}
+                           <label htmlFor='itemAmt'>Amount:</label>
+                           <input type='number' id='itemAmt'
+                               defaultValue={this.props.itemAmt}
+                               onChange={this.props.updateItemState('itemAmt')}
                            />
 
                            <button id='cartAddBtn' className='btn btn-primary' onClick={this.props.addToStore}>

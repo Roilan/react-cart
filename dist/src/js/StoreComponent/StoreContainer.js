@@ -4,14 +4,15 @@ var StoreItems = require('./StoreItems');
 var AddStoreItem = require('./AddStoreItem');
 
 var api = 'http://104.236.200.153:3000/';
+var apiStore = api + 'api/store';
 
 var StoreContainer = React.createClass({
     getInitialState: function() {
         return {
             items: [],
+            itemAmt: '',
             itemName: '',
-            itemPrice: '',
-            itemDescription: ''
+            itemPrice: ''
         }
     },
     componentDidMount: function() {
@@ -20,14 +21,14 @@ var StoreContainer = React.createClass({
     addToStore: function(e) {
         e.preventDefault();
 
-        if(this.state.itemDescription && this.state.itemName && this.state.itemPrice !== '') {
+        if(this.state.itemAmt && this.state.itemName && this.state.itemPrice !== '') {
             request({
-                url: api + 'api/items',
+                url: apiStore,
                 method: 'POST',
                 data: {
                     price: this.state.itemPrice,
                     name: this.state.itemName,
-                    description: this.state.itemDescription
+                    amt: this.state.itemAmt
                 },
                 success: function() {
                     this.updateStoreItems();
@@ -47,7 +48,7 @@ var StoreContainer = React.createClass({
     },
     updateStoreItems: function() {
         request({
-            url: api + 'api/items',
+            url: apiStore,
             method: 'GET',
             success: function(response) {
                 this.setState({
@@ -62,7 +63,7 @@ var StoreContainer = React.createClass({
                 <AddStoreItem
                     itemName={this.state.itemName}
                     itemPrice={this.state.itemPrice}
-                    itemDescription={this.state.itemDescription}
+                    itemAmt={this.state.itemAmt}
                     updateItemState={this.updateItemState}
                     addToStore={this.addToStore}
                 />
