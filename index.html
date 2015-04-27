@@ -8,51 +8,19 @@
 
 </head>
 <body>
-    <div class="container">
+  <div class="container">
+    <div class="row" id="StoreItems"></div>
+    <div class="row" id="ShoppingCart"></div>
 
-        <div class="row" id="StoreItems">
-        </div>
-
-        <!-- Shopping Cart -->
-        <div class="row">
-            <div class="col-sm-12 text-left">
-
-                <h4 class="text-center">Shopping Cart</h4>
-
-                <ul>
-                    <li class="row list-inline items-row">
-                        <span class="itemAmt">1</span>
-
-                        <span class="itemName">Food</span>
-
-                        <button class="btn btn-danger btn-sm btn-cart-remove">Remove</button>
-
-                        <button class="btn btn-primary btn-sm btn-cart">Update</button>
-
-                        <span class="itemPrice">$9.99</span>
-                    </li>
-                </ul>
-
-            </div>
-        </div>
-
-        <div class="row" id="AddStoreItem">
-        </div>
-
-        <!-- General Cart Btns -->
-        <div class="row">
-            <div class="col-sm-12 text-center">
-                <button class="btn btn-danger">
-                    Clear
-                </button>
-
-                <button class="btn btn-danger">Log</button>
-            </div>
-        </div>
-
+    <div class="row">
+      <div class="col-sm-12 text-center">
+        <button class="btn btn-danger">Clear</button>
+        <button class="btn btn-danger">Log</button>
+      </div>
     </div>
+  </div>
 
 
-    <script src="dist/build/js/build.js"></script>
+  <script src="dist/build/js/build.js"></script>
 </body>
 </html>
