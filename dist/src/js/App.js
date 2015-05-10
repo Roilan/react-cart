@@ -1,7 +1,7 @@
 var React = require('react');
 
 var StoreContainer = require('./StoreComponent/StoreContainer');
-var CartContainer = require('./CartComponent/CartContainer');
+var CartItems = require('./Components/CartItems');
 
 React.render(
   <StoreContainer />,
@@ -9,6 +9,6 @@ React.render(
 );
 
 React.render(
-  <CartContainer />,
+  <CartItems />,
   document.getElementById('ShoppingCart')
 );

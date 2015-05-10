@@ -11,6 +11,7 @@ var browserify = require('browserify');
 var watchify = require('watchify');
 var reactify = require('reactify');
 var streamify = require('gulp-streamify');
+var babelify = require('babelify');
 
 
 var path = {
@@ -60,6 +61,7 @@ gulp.task('watch', function() {
         .pipe(reload({stream: true}))
         console.log('Updated');
     })
+        .transform(babelify)
         .bundle()
         .pipe(source(path.JS_FILE_OUT))
         .pipe(gulp.dest(path.JS_OUT));
