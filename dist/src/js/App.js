@@ -1,10 +1,10 @@
 var React = require('react');
 
-var StoreContainer = require('./StoreComponent/StoreContainer');
+var StoreItems = require('./Components/StoreItems');
 var CartItems = require('./Components/CartItems');
 
 React.render(
-  <StoreContainer />,
+  <StoreItems />,
   document.getElementById('StoreItems')
 );
 
