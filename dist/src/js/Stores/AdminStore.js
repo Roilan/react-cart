@@ -1,10 +1,8 @@
 var Reflux = require('reflux');
 var request = require('reqwest');
+var api = require('../Api');
 var AdminActions = require('../Actions/AdminActions');
 var StoreActions = require('../Actions/StoreActions');
-
-var api = 'http://104.236.200.153:3000/';
-var apiStore = api + 'api/store';
 
 var AdminStore = Reflux.createStore({
   listenables: [AdminActions],
@@ -24,7 +22,7 @@ var AdminStore = Reflux.createStore({
 
     if (itemName && itemPrice && itemAmt !== '') {
       request({
-        url: apiStore,
+        url: api.store,
         method: 'POST',
         data: {
           price: this.items.itemPrice,
