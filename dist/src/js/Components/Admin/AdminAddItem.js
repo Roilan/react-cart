@@ -6,8 +6,6 @@ var AdminActions = require('../../Actions/AdminActions');
 var AdminAddItem = React.createClass({
   mixins: [Reflux.connect(AdminStore)],
 
-  //onChange={this.props.updateItemState('itemName')}
-
   getInitialState () {
     return {
       itemName: '',
@@ -31,11 +29,7 @@ var AdminAddItem = React.createClass({
     return (
       <div className='col-sm-12'>
         <h4>Admin: Add Item</h4>
-
-        <span>Name: {this.state.itemName}</span> <br />
-        <span>Price: {this.state.itemPrice}</span> <br />
-        <span>Amt: {this.state.itemAmt}</span>
-
+        
         <form onSubmit={this.addItem}>
           <li className="row list-inline">
             <label htmlFor='itemName'>Name:</label>
