@@ -1,8 +1,7 @@
 var Reflux = require('reflux');
 
 var AdminActions = Reflux.createActions([
-  'AdminAddItem',
-  'AdminUpdateItem',
+  'addItem',
   'updateItem'
 ]);
 

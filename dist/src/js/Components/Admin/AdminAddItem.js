@@ -18,7 +18,7 @@ var AdminAddItem = React.createClass({
 
   addItem: function (e) {
     e.preventDefault();
-    AdminActions.AdminAddItem();
+    AdminActions.addItem();
   },
 
   updateItem (name) {

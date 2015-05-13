@@ -15,7 +15,7 @@ var AdminStore = Reflux.createStore({
     this.trigger(this.items);
   },
 
-  AdminAddItem () {
+  addItem () {
     var itemName = this.items.itemName;
     var itemPrice = this.items.itemPrice;
     var itemAmt = this.items.itemAmt;
