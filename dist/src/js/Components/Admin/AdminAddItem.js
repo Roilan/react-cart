@@ -29,7 +29,7 @@ var AdminAddItem = React.createClass({
     return (
       <div className='col-sm-12'>
         <h4>Admin: Add Item</h4>
-        
+
         <form onSubmit={this.addItem}>
           <li className="row list-inline">
             <label htmlFor='itemName'>Name:</label>

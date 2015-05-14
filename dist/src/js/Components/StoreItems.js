@@ -12,6 +12,13 @@ var StoreItems = React.createClass({
     }
   },
 
+  addItem (item) {
+    return (e) => {
+      e.preventDefault();
+      StoreActions.addItemToCart(item);
+    }
+  },
+
   render () {
     var items = this.state.storeItems.map((item, i) => {
       return (
@@ -19,7 +26,11 @@ var StoreItems = React.createClass({
           <form>
             <input type='number' className='itemAmt' defaultValue={item.amt} />
             <span className="itemName">{item.name}</span>
-            <button className="btn btn-primary btn-sm btn-cart">Add</button>
+            <button
+              className="btn btn-primary btn-sm btn-cart"
+              onClick={this.addItem(item)}>
+              Add
+            </button>
             <span className="itemPrice">{item.price}</span>
           </form>
         </li>

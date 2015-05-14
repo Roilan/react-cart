@@ -15,6 +15,21 @@ var CartStore = Reflux.createStore({
     this.updateStoreItems();
   },
 
+  addItemToCart (item) {
+    request({
+      url: api.cart,
+      method: 'POST',
+      data: {
+        amt: item.amt,
+        totalprice: item.price,
+        name: item.name
+      },
+      success: () => {
+        CartActions.updateCartItems();
+      }
+    });
+  },
+
   updateCartItems () {
     request({
       url: api.cart,

@@ -1,7 +1,8 @@
 var Reflux = require('reflux');
 
 var StoreActions = Reflux.createActions([
-  'updateStoreItems'
+  'updateStoreItems',
+  'addItemToCart'
 ]);
 
 module.exports = StoreActions;
